@@ -2,7 +2,7 @@
 
 int main()
 {
-  LibroCalificar miLibroCalificar( "CS101 Programacion en C++" );
+  LibroCalificar miLibroCalificar( "FC2 Programacion en C++" );
   
   miLibroCalificar.mostrarMensaje(); // muestra el mensaje de bienvenida
   
