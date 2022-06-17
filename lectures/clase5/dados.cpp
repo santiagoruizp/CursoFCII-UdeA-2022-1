@@ -15,11 +15,11 @@ using std::cin;
 int main()
 {
   int frecuencia1 = 0; // cuenta de veces que se tiró 1
-  int frecuencia2 = {0}; // cuenta de veces que se tiró 2
-  int frecuencia3 = {0}; // cuenta de veces que se tiró 3
-  int frecuencia4 = {0};
-  int frecuencia5 = {0};
-  int frecuencia6 = {0};
+  int frecuencia2{0}; // cuenta de veces que se tiró 2
+  int frecuencia3{0}; // cuenta de veces que se tiró 3
+  int frecuencia4{0};
+  int frecuencia5{0};
+  int frecuencia6{0};
 
   srand(time(NULL)); // TENGA CUIDADO SOLO LLAMAR UNA VEZ
   //srand(time(0));
