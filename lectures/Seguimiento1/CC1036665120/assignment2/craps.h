@@ -10,7 +10,7 @@ class JuegoCraps
   float dineroApostar();
   int tirarDados();
   float estadoJuego();
-  float calcularDinero(float estado, float apuesta);
-  void mostrarMensaje(int estado);
+  float calcularDinero(float, float);
+  void mostrarMensaje(int);
   bool preguntaSeguir();
 };
