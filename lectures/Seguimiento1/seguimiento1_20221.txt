@@ -1,0 +1,28 @@
+Tarea1.
+Por favor, haga el ejercicio 8 de la sección 4.5 del texto guiá.
+Task 1:  Exercises 4.5, point8 (Heat transfer).
+
+Tarea2.
+a)Escriba una aplicación que juegue a ``craps" (ya la tenemos!).
+b)Modifique el programa del item anterior para permitir apuestas. Empaquete como función la parte del programa que ejecuta un juego de craps. Inicialice la variable SaldoenBanco con 1000000 de pesos. Pida al jugador que introduzca una apuesta . Use un ciclo while para comprobar
+ que esa apuesta sea menor o igual al SaldoenBanco y, si no lo es, haga que el usuario vuelva a introducir la apuesta hasta que se introduzca un valor válido. Después de esto, comience un juego de craps. Si el jugador gana, agregue la apuesta al SaldoenBanco e imprima el nuevo SaldoenBanco. Si el jugador pierde, reste la apuesta al SaldoenBanco , imprima el nuevo SaldoenBanco , compruebe si SaldoenBanco se ha vuelto cero y, de ser así, imprima el mensaje "Lo siento. Se quedo sin fondos!" A medida que el juego progrese, imprima varios mensajes para crear algo de ``charla", como "usted se esta quebrando, no le parece?" , o "hagale, no pasa nada, arriesguese!" , o "La sacaste del estadio. Ahora
+es tiempo de cambiar sus fichas por  la plata!" .
+
+
+Tarea3.
+El factorial de un entero "n" no negativo se escribe como n! (n factorial) y se define de la siguiente manera:
+n! = n · (n – 1) · (n – 2) · . . . · 1 ( para valores de n mayores o iguales a 1)
+y
+n! = 1 ( para n = 0 o n = 1).
+
+Usando las tecnicas de programcion orienta a objetos (POO) que hemos estudiado, cree una clase que nos devuleva el valor de e^x:
+
+e^x = 1 + (x/1!) + (x^2/2!) +  (x^3/3!) +  .......
+
+Su clase debe tener almenos las siguientes caracteristicas:
+dos variables privadas: el valor de "x" y "N"la presicion (el numero de terminos de la serie).
+Debe tener un constructor.
+Ademas debe tener dos funciones mas:
+a) una que lea un entero no negativo, que calcule su factorial.
+b) una que calcule el valor de e^x.
+Finalmente debe tener una funcion que muestre el valor de e^x
