@@ -96,6 +96,8 @@ int Cont2 = 1;
 
 int main()
 {
+    cout << "Bienvenido al juego de apuestas con Craps" << endl;
+	
     while(Cont2==1)
     {
     while(Cont==0)
