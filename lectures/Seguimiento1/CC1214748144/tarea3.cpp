@@ -7,28 +7,19 @@
 #include <ctime>
 #include <cstdlib>
 #include <cmath>
-#include "tarea3.h"
+#include "tarea3.C"
 using namespace std; 
-Exponencial::Exponencial(int N,float x)
-{
- fact(N);
- serie(N, x);
+int main(){
+float x;
+int N;
+float R;
+cout<<"Ingrese el número al que le quiere conocer la exponencial"<<endl;
+cin>>x;
+cout<<"Ingrese hasta dónde quiere realizar la suma"<<endl;
+cin>>N;
+  Exponencial exp1(N,x);
+  R=exp1.serie(N,x);
+  cout<<R<<endl;
+   //exp1.mostrar(R);
+  return 0; 
 }
-
-float Exponencial::fact(int K){
-#include <cmath>
-	 return tgamma(K + 1);  
-}
- 
-float Exponencial::serie(int N, float x){ 
-float sum=0;
-for (int c=0;c<=N;c++){
-sum+=(pow(x,c))/(fact(c));
-}
-  return sum;
-}
-
-void mostrar(float resul){
- cout<<"EL valor de e^x es:"<<resul<<endl;
-}
-
