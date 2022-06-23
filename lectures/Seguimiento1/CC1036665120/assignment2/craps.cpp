@@ -171,6 +171,22 @@ float JuegoCraps::calcularDinero(float estado, float apuesta){
   
 }
 
+// ------------------------------------------
+// MUESTRA MENSAJES DE CANTIDAD DE DINERO
+// ------------------------------------------
+void JuegoCraps::mostrarMensajeDinero(float dineroJugador){
+
+if (dineroJugador>0)
+{
+  cout << "Ya tienes unos : " << dineroJugador << " pesos." <<endl;
+
+}else{
+  cout << "Ya tienes $0 pesos." <<endl;
+  cout << "Lo siento. Se quedo sin fondos!" <<endl;
+}
+
+}
+
 
 // ------------------------------------------
 // MUESTRA MENSAJES DE CONVERSACIÓN

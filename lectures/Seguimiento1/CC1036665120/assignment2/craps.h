@@ -12,5 +12,5 @@ class JuegoCraps
   float estadoJuego();
   float calcularDinero(float, float);
   void mostrarMensaje(int);
-  bool preguntaSeguir();
+  void mostrarMensajeDinero(float);
 };

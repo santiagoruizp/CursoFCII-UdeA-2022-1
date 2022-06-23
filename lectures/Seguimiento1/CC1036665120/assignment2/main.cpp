@@ -19,13 +19,11 @@ do
 {   
     float estado = craps.estadoJuego();
     dineroJugador = dineroJugador + craps.calcularDinero(estado, apuesta);
-    sleep(1);//sleeps for 1 second
-    cout << "Ya tienes unos : " << dineroJugador << " pesos." <<endl;
+    sleep(1); //sleeps for 1 second
+    craps.mostrarMensajeDinero(dineroJugador);
     craps.mostrarMensaje(estado);
 
 } while (dineroJugador>0);
-
-cout << "Lo siento. Se quedo sin fondos!" <<endl;
 
 return 0; 
 }
