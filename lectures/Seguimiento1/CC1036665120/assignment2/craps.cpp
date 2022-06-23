@@ -15,7 +15,6 @@ El jugador pierde si tira un 7 antes de llegar a su punto.
 
 #include <iostream>
 #include <cstdlib> // contiene los prototipos para las funciones srand y rand
-#include <ctime> // contiene el prototipo para la función time
 #include <list>
 #include <unistd.h>
 
@@ -42,11 +41,14 @@ cin >> SaldoenBanco;
 
 while (SaldoenBanco > 100000 or SaldoenBanco < 100 or cin.fail())
 {
+  // Verifica que se ingrese un valor válido
   if (cin.fail())
   {
     cout << "Por favor, debes apostar dinero. Ingresa un número." << endl;
     cin.clear();
     cin.ignore(256,'\n');
+
+  // Verifica que el dinero ingresado sea válido
   }else if (SaldoenBanco > 100000)
   {
     cout << "Tu apuesta no es válida. Debes ingresar un valor menor o igual a $100mil: " << endl; 
@@ -88,6 +90,7 @@ int JuegoCraps::tirarDados(){
 // DETERMINA EL ESTADO DEL JUEGO
 // ------------------------------------------
 float JuegoCraps::estadoJuego(){
+  
   // enumeración con constantes que representa el estado del juego
   enum Estado { CONTINUAR, GANO, PERDIO }; // todas las constantes en mayúsculas. Enumeration Types Prior to C++11
   
@@ -96,8 +99,7 @@ float JuegoCraps::estadoJuego(){
   
   // primer tiro del dado
   cout << "Presiona ENTER para tirar los dados " <<endl;
-  cin.clear();
-  cin.ignore(256,'\n');
+  cin.ignore();
   int sumaDeDados = tirarDados(); 
   
   
@@ -107,7 +109,6 @@ float JuegoCraps::estadoJuego(){
     case 7: // gana con 7 en el primer tiro
     case 11: // gana con 11 en el primer tiro
       estadoJuego = GANO;
-      //estadoJuego = Estado::GANO; // si se usa la linea 27 con la clase
       break;
     case 2: // pierde con 2 en el primer tiro
     case 3: // pierde con 3 en el primer tiro
@@ -138,7 +139,7 @@ float JuegoCraps::estadoJuego(){
 	        estadoJuego = PERDIO;
     }
   
-  // muestra mensaje de que ganó o perdió y retorna el estado
+  // Muestra mensaje de que ganó o perdió y retorna el estado
   int estado = 2; 
   if (estadoJuego == GANO )
   {
@@ -211,18 +212,18 @@ int posicion= rand() % 4;
 
 if (estado==1)
 {
-  // Create iterator pointing to first element
+  // Crear iterador apuntando al primer elemento
   list<string>::iterator it_pos = mensajesPositivos.begin();
 
-  // Advance the iterator by 2 positions,
+  // Avanzar el iterador a posicion
   advance(it_pos, posicion);
   cout << *it_pos <<endl; 
 
 }if(estado==0){
-  // Create iterator pointing to first element
+  // Crear iterador apuntando al primer elemento
   list<string>::iterator it_neg = mensajesNegativos.begin();
 
-  // Advance the iterator by 2 positions,
+  // Avanzar el iterador a posicion
   advance(it_neg, posicion);
   cout << *it_neg <<endl; 
 }

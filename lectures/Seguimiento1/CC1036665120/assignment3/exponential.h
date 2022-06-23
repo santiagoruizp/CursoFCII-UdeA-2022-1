@@ -1,5 +1,3 @@
-
-#include <string> 
 #include <tuple>
     
 using namespace std;
@@ -12,5 +10,5 @@ class ExponentialSeries
   tuple<int, float> getNumberFromUser();
   double calculateSeries(float, int);
   double factorial(int);
-  void mostrarResultado(float);
+  void showResult(float);
 };

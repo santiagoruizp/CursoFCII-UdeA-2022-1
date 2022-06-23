@@ -10,7 +10,7 @@ float area = heat.stablishArea();
 float temp_surf = heat.stablishTempSurface();
 float temp_env = heat.stablishTempEnv();
 float q = heat.calcHeatTransfer(area, temp_surf, temp_env);
-heat.mostrarMensaje(q);   
+heat.showMessage(q);   
    
 return 0; 
 }

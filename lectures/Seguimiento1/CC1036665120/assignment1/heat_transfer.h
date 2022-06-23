@@ -12,5 +12,5 @@ class HeatTransfer
   float stablishTempSurface();
   float stablishTempEnv(); 
   float calcHeatTransfer(float area, float temp_surf, float temp_env);
-  void mostrarMensaje(float q);
+  void showMessage(float q);
 };

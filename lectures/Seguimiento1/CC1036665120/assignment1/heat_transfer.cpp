@@ -128,7 +128,7 @@ float HeatTransfer::calcHeatTransfer(float area, float temp_surf, float temp_env
     return q;
 } 
 
-void HeatTransfer::mostrarMensaje(float q)
+void HeatTransfer::showMessage(float q)
 { 
   // MENSAJE CON EL RESULTADO 
   cout << "La función de transferencia es:" << endl;

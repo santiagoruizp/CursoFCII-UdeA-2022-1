@@ -3,7 +3,7 @@ El factorial de un entero "n" no negativo se escribe como n! (n factorial) y se 
 n! = n · (n – 1) · (n – 2) · . . . · 1 ( para valores de n mayores o iguales a 1)
 y n! = 1 ( para n = 0 o n = 1).
 
-Clase que devuleve el valor de e^x:
+Esta clase devuleve el valor de e^x:
 
 e^x = 1 + (x/1!) + (x^2/2!) +  (x^3/3!) +  .......
 */
@@ -45,6 +45,7 @@ double ExponentialSeries::factorial(int n)
 {
     double result = 1;
     
+    // calcula el factorial de un número n
     if (n == 0 or n == 1){
         result = 1;
     }else{
@@ -72,6 +73,7 @@ double ExponentialSeries::calculateSeries(float x, int n)
     double factor = 0;
     for (int i = 0; i <= n; i++)
     {
+        // Calcula cada uno de los términos de la serie y los va sumando
         factor = factorial(i);
         result = result + pow(x,i)/factor;
         cout << "Término " << i << " = " << result <<endl;
@@ -83,7 +85,7 @@ double ExponentialSeries::calculateSeries(float x, int n)
 // MUESTRA MENSAJE DEL RESULTADO
 // ------------------------------------------
 
-void ExponentialSeries::mostrarResultado(float e)
+void ExponentialSeries::showResult(float e)
 {
     cout << "El resultado de la serie exponencial es: "<<  e << endl;
 

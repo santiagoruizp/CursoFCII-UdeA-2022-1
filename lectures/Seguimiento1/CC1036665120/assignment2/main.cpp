@@ -1,7 +1,4 @@
-
-#include <iostream>
 #include <unistd.h>
-#include <ctime>
 
 #include "craps.h"
 
@@ -11,16 +8,25 @@ using namespace std;
 int main()
 {
 JuegoCraps craps = JuegoCraps();
+
+// Ingresa el dinero a apostar
 float apuesta = craps.dineroApostar();   
 float dineroJugador = 100000; 
 srand( ( unsigned int )time( nullptr ) );
 
 do
 {   
+    // Realiza cada partida
     float estado = craps.estadoJuego();
+
+    // Calcula el dinero
     dineroJugador = dineroJugador + craps.calcularDinero(estado, apuesta);
-    sleep(1); //sleeps for 1 second
+    sleep(1); //Espera un segundo
+
+    // Muestra cuanto dinero se tiene 
     craps.mostrarMensajeDinero(dineroJugador);
+
+    // Conversación
     craps.mostrarMensaje(estado);
 
 } while (dineroJugador>0);

@@ -14,6 +14,6 @@ auto [x, n] = e.getNumberFromUser();
 double exp = e.calculateSeries(x, n);  
 
 // muestra el resultado
-e.mostrarResultado(exp);
+e.showResult(exp);
 return 0; 
 }
