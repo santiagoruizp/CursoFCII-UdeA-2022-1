@@ -101,7 +101,7 @@ int main(){
   cout << "Bienvenido al juego de Scrap, ingrese valor apostar:" << endl;
   cin >> apuesta;
   while (apuesta>SaldoenBanco){
-    cout << "Ingrese un valor de apuesta menor a su saldo actual: "<< apuesta << endl;
+    cout << "Ingrese un valor de apuesta menor a su saldo actual: "<< SaldoenBanco << endl;
     cin >> apuesta;
   }
   string a=scrap();
