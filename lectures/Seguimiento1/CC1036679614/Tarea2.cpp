@@ -9,18 +9,12 @@ vez “su punto”. El jugador pierde si tira un 7 antes de llegar a su punto.
 
 #include <iostream>
 #include <cstdlib> // contiene los prototipos para las funciones srand y rand
-#include <ctime> // contiene el prototipo para la función time
-
-/*using std::cout;
-using std::endl;
-using std::rand;
-using std::srand;
-using std::time;*/
-
+#include <ctime> // contiene el prototipo para la función time using std::time;*/
+#include<limits>
 using namespace std;
 
 int tirarDados(); // tira los dados, calcula y muestra la suma
-string scrap()
+string scrap() // Juega scrap
 {
   // enumeración con constantes que representa el estado del juego
   enum Estado { CONTINUAR, GANO, PERDIO }; // todas las constantes en mayúsculas. Enumeration Types Prior to C++11
@@ -96,14 +90,16 @@ int tirarDados()
 
 int main(){
 
-  int SaldoenBanco=1000000;
-  int apuesta;
+  double SaldoenBanco=1000000;
+  double apuesta=0;
   cout << "Bienvenido al juego de Scrap, ingrese valor apostar:" << endl;
-  cin >> apuesta;
-  while (apuesta>SaldoenBanco){
-    cout << "Ingrese un valor de apuesta menor a su saldo actual: "<< SaldoenBanco << endl;
-    cin >> apuesta;
+  
+  while(!(cin >> apuesta) or apuesta>SaldoenBanco){
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese un valor valido, saldo actual:  " << SaldoenBanco << endl ;
   }
+  
   string a=scrap();
   if (a=="gano"){
     SaldoenBanco=SaldoenBanco+apuesta;
@@ -114,19 +110,24 @@ int main(){
     cout << "Perdiste. Saldo actual: "<< SaldoenBanco << endl ;
   }
   string SeguirJugando;
-  cout << " ¿Desea seguir jugando? "<< endl;
+  cout << "¿Desea seguir jugando? ('si' 'no') "<< endl;
   cin >> SeguirJugando;
-  if (SeguirJugando=="no"){
-    cout << "Gracias por jugar. Saldo actual: " << SaldoenBanco; 
+
+  while (SeguirJugando!="no" and SeguirJugando!="si"){
+    cout<< "Ingrese opción valida ('si' 'no')" << endl;
+    cin >> SeguirJugando;
   }
-  else{
+  
+  if(SeguirJugando=="si"){
   
     while (SeguirJugando=="si"){
       cout << "Ingrese valor apostar:" << endl;
       cin >> apuesta;
-      while (apuesta>SaldoenBanco){
-	cout << "Ingrese un valor de apuesta menor a su saldo actaul: "<< endl;
-	cin >> apuesta;
+      
+      while(!(cin >> apuesta) or apuesta>SaldoenBanco){ //Permite solo recibir valores numericos
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cout << "Ingrese un valor valido, saldo actual:  " << SaldoenBanco << endl ;
       }
       a=scrap();
       if (a=="gano"){
@@ -136,12 +137,20 @@ int main(){
       }
       else{
 	SaldoenBanco=SaldoenBanco-apuesta;
-	cout << "usted se esta quebrando, no le parece?" << endl;
+	cout << "Usted se esta quebrando, no le parece?" << endl;
 	cout << "Perdiste. Saldo actual: "<< SaldoenBanco << endl ;
       }
       cout << " ¿Desea seguir jugando? "<< endl;
       cin >> SeguirJugando;
+      while (SeguirJugando!="no" and SeguirJugando!="si"){
+	cout<< "Ingrese opción valida ('si' 'no')" << endl;
+	cin >> SeguirJugando;
+      }
     }
     }
+
+  else{
+    cout << "Gracias por jugar. Saldo actual: " << SaldoenBanco;
+  }
   return 0;
 }
