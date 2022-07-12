@@ -90,10 +90,10 @@ int tirarDados()
 
 int main(){
 
-  double SaldoenBanco=1000000;
-  double apuesta=0;
+  int SaldoenBanco=1000000;
+  int apuesta=0;
   cout << "Bienvenido al juego de Scrap, ingrese valor apostar:" << endl;
-  
+  // Permite que solo se acepten números por teclado y además que el valor apostado sea menor al saldo actual.
   while(!(cin >> apuesta) or apuesta>SaldoenBanco){
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -118,38 +118,38 @@ int main(){
     cin >> SeguirJugando;
   }
   
-  if(SeguirJugando=="si"){
   
-    while (SeguirJugando=="si"){
-      cout << "Ingrese valor apostar:" << endl;
-      cin >> apuesta;
+  
+  while (SeguirJugando=="si"){
+    cout << "Ingrese valor apostar:" << endl;
+    cin >> apuesta;
       
-      while(!(cin >> apuesta) or apuesta>SaldoenBanco){ //Permite solo recibir valores numericos
-	cin.clear();
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	cout << "Ingrese un valor valido, saldo actual:  " << SaldoenBanco << endl ;
+    while(apuesta>SaldoenBanco){ //Permite solo recibir valores numericos
+   
+      cout << "Ingrese un valor valido, saldo actual:  " << SaldoenBanco << endl ;
+      cin >> apuesta;
       }
-      a=scrap();
-      if (a=="gano"){
-	SaldoenBanco=SaldoenBanco+apuesta;
-	cout << "La sacaste del estadio" << endl;
-	cout << "Ganaste. Saldo actual: " << SaldoenBanco << endl ;
+    a=scrap();
+    if (a=="gano"){
+      SaldoenBanco=SaldoenBanco+apuesta;
+      cout << "La sacaste del estadio" << endl;
+      cout << "Ganaste. Saldo actual: " << SaldoenBanco << endl ;
       }
-      else{
-	SaldoenBanco=SaldoenBanco-apuesta;
-	cout << "Usted se esta quebrando, no le parece?" << endl;
-	cout << "Perdiste. Saldo actual: "<< SaldoenBanco << endl ;
+    else{
+      SaldoenBanco=SaldoenBanco-apuesta;
+      cout << "Usted se esta quebrando, no le parece?" << endl;
+      cout << "Perdiste. Saldo actual: "<< SaldoenBanco << endl ;
       }
-      cout << " ¿Desea seguir jugando? "<< endl;
+    cout << "¿Desea seguir jugando? ('si' 'no') "<< endl;
+    cin >> SeguirJugando;
+    while (SeguirJugando!="no" and SeguirJugando!="si"){
+      cout<< "Ingrese opción valida ('si' 'no')" << endl;
       cin >> SeguirJugando;
-      while (SeguirJugando!="no" and SeguirJugando!="si"){
-	cout<< "Ingrese opción valida ('si' 'no')" << endl;
-	cin >> SeguirJugando;
       }
     }
-    }
+    
 
-  else{
+  if( SeguirJugando=="no"){
     cout << "Gracias por jugar. Saldo actual: " << SaldoenBanco;
   }
   return 0;

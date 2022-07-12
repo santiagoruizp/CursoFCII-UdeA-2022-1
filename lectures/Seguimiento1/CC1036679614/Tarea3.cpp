@@ -3,12 +3,15 @@
 #include <cmath>
 using namespace std;
 
-
+//Constructor
+//a: valor a calcular exponencial
+// Número de terminos a considerar en la serie de la exponencial
 calculo::calculo(float a, unsigned int b){
   x=a;
   N=b;
 }
 
+//funcion factorial: devuelve el facotiral de un número
 int calculo::factorial(unsigned n){
   unsigned long k=1;
   for (unsigned long i = 1; i <= n; i++){
@@ -20,6 +23,7 @@ int calculo::factorial(unsigned n){
 
 }
 
+// Devuelve la exponencial de x con N terminos
 float calculo::exponencial(){
   
   float c=0;
