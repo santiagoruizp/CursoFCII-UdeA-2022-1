@@ -20,12 +20,10 @@ computadora, evaluando números mucho más grandes que 1000.
 using namespace std;
 
 
-// ---------------------------------------
+// ---------------------------------------------------------
+// Retorna una lista con los divisores del número ingresado 
+// ---------------------------------------------------------
 list<int> divisores(int numero){
-
-    // ---------------------------------------------------------
-    // Retorna una lista con los divisores del número ingresado 
-    // ---------------------------------------------------------
 
     // Encontrar los Divisores:
     // Recorre todos los números hasta el número ingresado, para encontrar cuando 
@@ -47,21 +45,17 @@ list<int> divisores(int numero){
 }
 
 
-// ---------------------------------------
+// ---------------------------------------------------------
+// Retorna un entero con la suma de los valores de la lista
+// ---------------------------------------------------------
 int sumDivisores(list<int> lista){
-
-    // ---------------------------------------------------------
-    // Retorna un entero con la suma de los valores de la lista
-    // ---------------------------------------------------------
-
-    // Longitud de la lista
-    int sizeList = lista.size();
 
     // La suma de los elementos de la lista es la suma de los 
     // divisores de un número dado
     int suma = 0;
     list<int>::iterator it;
 
+    // Va sumando los elementos de la lista
     for (it=lista.begin(); it!=lista.end(); it++)
     {
         suma += *it;
@@ -71,16 +65,16 @@ int sumDivisores(list<int> lista){
 }
 
 
-// ---------------------------------------
+// ---------------------------------------------------------
+// Verifica y muestra si un número es Perfecto
+// ---------------------------------------------------------
 void perfecto(int numero){
 
     // Lista de divisores de 'numero'
     list<int> divisoresList = divisores(numero);
-    // cout << "numero: " << numero;
 
     // Suma de los divisores de 'numero' y la cantidad de divisores
     int sumaDiv = sumDivisores(divisoresList);
-    //cout << " sumaDiv: " << sumaDiv << " sizeList: " << cantidadDiv << ", --> ";
 
     list<int>::iterator it;
 
@@ -112,6 +106,9 @@ void perfecto(int numero){
 
 
 
+// ---------------------------------------------------------
+// MAIN: Encuentra números perfectos en un rángo de búsqueda
+// ---------------------------------------------------------
 int main(){
 
     int numIngresar;
@@ -121,6 +118,7 @@ int main(){
     cout << "Rango de Búsqueda --> Ingrese el número entero hasta donde se buscará:  ";
     cin >> numIngresar;
 
+    // Rango de búsqueda de números perfectos 
     for (int i = 1; i <= numIngresar; i++)
     {
         perfecto(i);

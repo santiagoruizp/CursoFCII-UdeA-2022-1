@@ -73,6 +73,8 @@ double NumerosComplejos::obtenerParteImaginaria(){
 // Operaciones entre Complejos
 // -----------------------------------------
 
+// -----------------------------------------
+// SUMA
 NumerosComplejos NumerosComplejos::sumaComplejos(NumerosComplejos num_1, NumerosComplejos num_2){
 
     double num_1_real = num_1.obtenerParteReal();
@@ -90,7 +92,7 @@ NumerosComplejos NumerosComplejos::sumaComplejos(NumerosComplejos num_1, Numeros
 }
 
 // -----------------------------------------
-
+// RESTA
 NumerosComplejos NumerosComplejos::restaComplejos(NumerosComplejos num_1, NumerosComplejos num_2){
     
     double num_1_real = num_1.obtenerParteReal();
@@ -108,7 +110,7 @@ NumerosComplejos NumerosComplejos::restaComplejos(NumerosComplejos num_1, Numero
 }
 
 // -----------------------------------------
-
+// MULTIPLICACIÓN
 NumerosComplejos NumerosComplejos::multiplicaComplejos(NumerosComplejos num_1, NumerosComplejos num_2){
 
     //  Sea la operación:  (a + bi) · (c + di) = (ac − bd) + (ad + bc)i
@@ -128,7 +130,7 @@ NumerosComplejos NumerosComplejos::multiplicaComplejos(NumerosComplejos num_1, N
 }
 
 // -----------------------------------------
-
+// CONJUGADO
 NumerosComplejos NumerosComplejos::conjugado(NumerosComplejos num){
 
     double num_real = num.obtenerParteReal();
@@ -142,8 +144,9 @@ NumerosComplejos NumerosComplejos::conjugado(NumerosComplejos num){
     return num_conjug;
 }
 
-// -----------------------------------------
 
+// -----------------------------------------
+// DIVISIÓN
 NumerosComplejos NumerosComplejos::divideComplejos(NumerosComplejos num_1, NumerosComplejos num_2){
 
     // Sea la operación:  (a + bi) / (c + di) = ( (a + bi) * (c - di) ) / (c^2 + d^2)
