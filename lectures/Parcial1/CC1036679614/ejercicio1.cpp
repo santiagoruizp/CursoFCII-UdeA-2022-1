@@ -3,11 +3,11 @@
 using namespace std;
 
 // Función a calcular integral
-
 double Funcion(double x) {
-    return (x);
+    return sin(x);
 }
 
+//REGLA DEL TRAPECIO: RECIBE LIMITES DE INTEGRACIÓN Y NUMERO DE ITERACIONES EN EL CALCULO DE LA INTEGRAL
 double Trapecio(double a, double b, unsigned int n) {
     const double h = (b - a) / n;
     double integral = (Funcion(a) + Funcion(b)) / 2;
@@ -21,6 +21,8 @@ double Trapecio(double a, double b, unsigned int n) {
 
 }
 
+
+//REGLA DE SIMPSION: RECIBE LIMITES DE INTEGRACIÓN Y NUMERO DE ITERACIONES EN EL CALCULO DE LA INTEGRAL
 double Simpson(double a, double b, unsigned int n) {
     const double h = (b - a) / n;
     double integral = (Funcion(a) + Funcion(b));
@@ -38,5 +40,7 @@ double Simpson(double a, double b, unsigned int n) {
 
 int main() {
 
-    cout << Simpson(0, 1, 10000);
+    cout << "La integral usando la regla de Simpson es: "  << Simpson(0, M_PI, 10000) << endl;
+    cout << "La integral usando la regla del Trapecio es: " << Trapecio(0, M_PI, 10000) << endl;
     return 0;
+}

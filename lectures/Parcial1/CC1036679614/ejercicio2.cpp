@@ -20,7 +20,7 @@ void perfecto(int n) {
         }
     }
     if (contador == n) {
-        cout << "El número " << n << " es un número perfecto:" << endl;
+        cout << "El numero " << n << " es un numero perfecto:" << endl;
         cout << n << "= ";
         int c = 1;
 
