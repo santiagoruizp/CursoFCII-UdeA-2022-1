@@ -10,7 +10,7 @@ using std::endl;
 // function main 
 int main()
 {
-  int number1{0}; // primer entero
+   int number1{0}; // primer entero
    int number2{0}; // segundo entero
 
    
