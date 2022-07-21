@@ -1,0 +1,5 @@
+Ingresa el límite inferior de la integral:  0
+Ingresa el límite superior de la integral:  10
+Ingresa la precisión:  1000
+La integral con la regla compuesta de Simpson es 50.6396
+La integral con la regla compuesta Trapezoidal es 50.6395
