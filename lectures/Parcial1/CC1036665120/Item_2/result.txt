@@ -1,0 +1,12 @@
+------------------------------------
+PROGRAMA QUE BUSCA NÚMEROS PERFECTOS
+------------------------------------
+Rango de Búsqueda --> Ingrese el número entero hasta donde se buscará:  100000
+Número perfecto: 6
+1 + 2 + 3 = 6
+Número perfecto: 28
+1 + 2 + 4 + 7 + 14 = 28
+Número perfecto: 496
+1 + 2 + 4 + 8 + 16 + 31 + 62 + 124 + 248 = 496
+Número perfecto: 8128
+1 + 2 + 4 + 8 + 16 + 32 + 64 + 127 + 254 + 508 + 1016 + 2032 + 4064 = 8128

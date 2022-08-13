@@ -1,0 +1,27 @@
+Tarea1.
+La búsqueda binaria es un algoritmo eficiente para encontrar un elemento en una lista ordenada de elementos.
+Funciona al dividir repetidamente a la mitad la porción de la lista que podría contener al elemento,
+hasta reducir las ubicaciones posibles a solo una.
+Para terminar, el algoritmo encuentra un elemento que coincide con la clave de búsqueda o reduce el subvector hasta un tamaño de cero.
+Por favor, Cree un programa en c++ para implementar la búsqueda binaria.
+
+
+Tarea2.
+Escribir una funcion, "RecibirCadenas",  que recibe como parametros dos cadenas que puede contener espacios, la funcion deberá:
+
+    Decir qué cadena es mayor y cuál es menor alfabéticamente
+    Generar una nueva cadena que será la primera cadena leída, con las vocales convertidas a MAYÚSCULAS
+    Generar una nueva cadena que será la segunda cadena leída, con las consonantes convertidas a MAYÚSCULAS
+    Generar una nueva cadena concatenando las dos que ya fueron convertidas
+    Generar una nueva cadena que contenga la cadena concatenada invertida
+
+Incluya la función "RecibirCadenas"  en un programa ejecutable en C++, y use el programa para pedir al usuario que introduzca las dos cadenas con las que probara su función.
+
+Al finalizar el programa, este deberá:
+    Imprimir las dos cadenas originales
+    Imprimir las dos cadenas con las conversiones
+    Imprimir la cadena concatenada
+    Imprimir la cadena concatenada invertida
+
+
+Tarea3.
