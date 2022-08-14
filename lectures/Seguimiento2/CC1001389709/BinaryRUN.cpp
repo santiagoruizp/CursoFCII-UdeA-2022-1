@@ -28,4 +28,6 @@ int main(){
    // Se busca tal entero con la función BinarySearch en el arreglo array
  
    int index = BinarySearch(array, len, a);
+   
+   return 0;
 }
