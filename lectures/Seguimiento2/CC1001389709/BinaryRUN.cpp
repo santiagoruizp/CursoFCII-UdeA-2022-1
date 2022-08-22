@@ -1,5 +1,6 @@
 
 #include<iostream>
+#include<iomanip>
 #include "Binary.h"
 
 using namespace std;
@@ -12,9 +13,14 @@ int main(){
    // Arreglo de prueba array1
    const int len = 14;
    int array[len] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17};
+   
+   cout<<"Arreglo: [";
+   for (int i = 0; i<=len-1; i++)
+      cout<<array[i]<<setw(3); 
+   cout<<"]"<<endl;
     
    // Se recibe el entero a ser buscado
-   cout<<"Ingrese el valor a buscar en una lista de enteros: ";
+   cout<<"Ingrese el valor a buscar en la lista de enteros: ";
    cin>>a;
 
    // Se garantiza que la entrada sea correcta usando métodos del objeto cin
