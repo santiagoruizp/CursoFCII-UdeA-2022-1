@@ -45,11 +45,11 @@ int main()
 
   resultado = cadena1.compare( 1, 4, cadena3, 1, 4 );
   if ( resultado == 0 )
-    cout << "cadena1.compare( 1, 4, cadena3, 1, 4 ) == 0\n";
+    cout << "cadena1.compare( 1, 4, cadena3, 1, 4) == 0\n";
   else // resultado != 0
     {
       if ( resultado > 0 )
-	cout << "cadena1.compare( 1, 4, cadena3, 1, 4 ) > 0\n";
+	cout << "cadena1.compare( 1, 4, cadena3, 1, 4) > 0\n";
       else // resultado < 0
 	cout << "cadena1.compare( 1, 4, cadena3, 1, 4 ) < 0\n";
     }
