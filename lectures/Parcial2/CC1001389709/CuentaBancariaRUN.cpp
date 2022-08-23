@@ -19,6 +19,7 @@ int main(){
     CuentaAhorros cuenta2(2000, 1);
     cuenta2.CalcularInteres();
     cuenta2.Abonar(1000);
+    cuenta2.Abonar(cuenta2.CalcularInteres());
     cuenta2.Cargar(2000);
 
     cout<<endl<<"---> Se crea una cuenta de cheques con saldo 5000$ y cuota de 100$"<<endl;
