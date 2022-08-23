@@ -22,6 +22,7 @@ int main(){
   }
   
   cin >> cadena1; // lee "todos"
+  
   cout << "\ncadena1 es: " << cadena1 << endl; // NOTE: cuidado con la linea fantasma. aca debe usar getline(cin,string)
   return 0; 
 }
