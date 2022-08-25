@@ -143,48 +143,96 @@ void ProcesoDatos::seleccionar(string & buscar){
     cout<<"Información guardada en archivo "<< solicitado <<endl;
 }
 
+//------------------------------------------------------------------------------------
+void ProcesoDatos::estadistico(){
 
+     // Objeto para lectura de archivos.
+    string sinrep = "NoDuplicado.txt";
+    ifstream inFile;
 
+    // Se comprueba que el archivo exista.
+    if (inFile.fail()){
+        cout << "\nEl archivo llamado " << sinrep << " no se abrió exitosamente"<< endl;
+        exit(0);
+    }
 
+    // Variable para registral las camas
+    int reg_cam;
 
+    for (int i = 11; i <= 20; i++){
 
+        reg_cam = 0;
 
+        // String a buscar en el archivo
+        string code = to_string(i);
+        string dotcomma = ";";
+        code += dotcomma;
+        code.insert (0,";");
 
+        // Se cargan las líneas del archivo
+        inFile.open(sinrep.c_str());
+        string line;
+        inFile >> line;
 
+        while (inFile.good()){
 
+            // Búsqueda de los datos
+            int found = line.find(code);
+            // Escritura de los datos
+            if (found != string::npos)
+                reg_cam++;
+            inFile >> line;
+        }
+        
+         // Se cierran los archivos
+        inFile.close();
 
+    if (reg_cam > 0)
+        cout<<"El hotel " << i << " tiene " << reg_cam << " camas registradas en el archivo."<<endl;
+    }
+}
 
+//------------------------------------------------------------------------------------
+void ProcesoDatos::contar(string & fecha){
 
+    // Variable para almacenar la ocupación
+    int ocupacion = 0;
 
+    // Objeto para lectura de archivos.
+    string sinrep = "NoDuplicado.txt";
+    ifstream inFile;
+    inFile.open(sinrep.c_str());
 
+    // Se comprueba que el archivo exista.
+    if (inFile.fail()){
+        cout << "\nEl archivo llamado " << sinrep << " no se abrió exitosamente"<< endl;
+        exit(0);
+    }
 
+    // Se buscan los datos solicitados
+    string line;
+    inFile >> line;
 
+    while (inFile.good()){
 
+        // Búsqueda de los datos
+        int found = line.find(fecha);
+        // Si se encuentra la fecha se suma 1 a la ocupación
+        if (found != string::npos)
+            ocupacion++;
+        inFile >> line;
 
+    }
+    // Se cierra el archivo
+    inFile.close();
 
+    // Se imprime la ocupación de tal fecha
+    if (ocupacion > 0)
+        cout<<"La ocupación en la fecha "<< fecha << " es " << ocupacion <<endl;
+    else 
+        cout<<"No existen datos de la fecha "<< fecha <<endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 //------------------------------------------------------------------------------------
 void ProcesoDatos::eliminarHotel(string & eliminar){

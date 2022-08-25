@@ -34,7 +34,6 @@ int main(){
         switch(option){
 
             case 'a':{
-                // Se leen los datos y se cargan a la memoria
                 archivo.leeProcesa();
                 break;
             }
@@ -49,12 +48,17 @@ int main(){
                 archivo.seleccionar(selec);
                 break;
             }
-
-
-
-
-
-
+            case 'd':{
+                archivo.estadistico();
+                break;
+            }
+            case 'e':{
+                string selec1;
+                cout<<"Ingrese una fecha en formato aaaammdd para consultar ocupación: ";
+                cin>>selec1;
+                archivo.contar(selec1);
+                break;
+            }
             case 'f':{
                 string selec2;
                 cout<<"Ingrese un código de hotel para eliminar de los datos: ";
@@ -62,17 +66,9 @@ int main(){
                 archivo.eliminarHotel(selec2);
                 break;
             }
-
-
-
-
         }
 
         cout<<endl<<"Ingrese opción: ";
         cin>>option;
-
     }
-
-  
-
 }

@@ -15,7 +15,7 @@ class ProcesoDatos{
         void nuevaListaSinDuplicados();
         void seleccionar(string &);
         void estadistico();
-        void contar();
+        void contar(string &);
         void eliminarHotel(string &);
 
     private:
