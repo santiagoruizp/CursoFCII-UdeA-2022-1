@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include "CamasHotel.h"
 
-
 //------------------------------------------------------------------------------------
 ProcesoDatos::ProcesoDatos(const string & namefile){
 
@@ -16,15 +15,9 @@ ProcesoDatos::ProcesoDatos(const string & namefile){
 //------------------------------------------------------------------------------------
 void ProcesoDatos::leeProcesa(){
 
-    // Objeto para lectura de archivos.
+    // Se abre el archivo
     ifstream inFile;
-    inFile.open(filename.c_str());
-
-    // Se comprueba que el archivo exista.
-    if (inFile.fail()){
-        cout << "\nEl archivo llamado " << filename << " no se abrió exitosamente"<< endl;
-        exit(0);
-    }
+    inFile = AbrirArchivo(filename);
 
     // Se cuenta el número de líneas y se carga en memoria.
     string line;
@@ -51,7 +44,7 @@ void ProcesoDatos::leeProcesa(){
 void ProcesoDatos::nuevaListaSinDuplicados(){
 
     // Se crea el archivo para almacenar sin repetir
-    string sinrep = "NoDuplicado.txt";
+    sinrep = "NoDuplicado.txt";
     ofstream outFile;
     outFile.open(sinrep.c_str(), std::ofstream::out);
 
@@ -104,16 +97,9 @@ void ProcesoDatos::seleccionar(string & buscar){
     buscar += dotcomma;
     buscar.insert (0,";");
 
-    // Objeto para lectura de archivos.
-    string sinrep = "NoDuplicado.txt";
+    // Se abre el archivo sin repeticiones
     ifstream inFile;
-    inFile.open(sinrep.c_str());
-
-    // Se comprueba que el archivo exista.
-    if (inFile.fail()){
-        cout << "\nEl archivo llamado " << sinrep << " no se abrió exitosamente"<< endl;
-        exit(0);
-    }
+    inFile = AbrirArchivo(sinrep);
 
     // Se crea el archivo para almacenar los datos requeridos
     ofstream outFile;
@@ -146,9 +132,9 @@ void ProcesoDatos::seleccionar(string & buscar){
 //------------------------------------------------------------------------------------
 void ProcesoDatos::estadistico(){
 
-     // Objeto para lectura de archivos.
-    string sinrep = "NoDuplicado.txt";
+    // Se abre el archivo sin repeticiones
     ifstream inFile;
+    inFile.open(sinrep.c_str());
 
     // Se comprueba que el archivo exista.
     if (inFile.fail()){
@@ -159,7 +145,7 @@ void ProcesoDatos::estadistico(){
     // Variable para registral las camas
     int reg_cam;
 
-    for (int i = 11; i <= 20; i++){
+    for (int i = 10; i <= 20; i++){
 
         reg_cam = 0;
 
@@ -178,13 +164,13 @@ void ProcesoDatos::estadistico(){
 
             // Búsqueda de los datos
             int found = line.find(code);
-            // Escritura de los datos
+            // Escritura de la ocupación
             if (found != string::npos)
                 reg_cam++;
             inFile >> line;
         }
         
-         // Se cierran los archivos
+         // Se cierra el archivo
         inFile.close();
 
     if (reg_cam > 0)
@@ -198,16 +184,9 @@ void ProcesoDatos::contar(string & fecha){
     // Variable para almacenar la ocupación
     int ocupacion = 0;
 
-    // Objeto para lectura de archivos.
-    string sinrep = "NoDuplicado.txt";
+    // Se abre el archivo sin repeticiones
     ifstream inFile;
-    inFile.open(sinrep.c_str());
-
-    // Se comprueba que el archivo exista.
-    if (inFile.fail()){
-        cout << "\nEl archivo llamado " << sinrep << " no se abrió exitosamente"<< endl;
-        exit(0);
-    }
+    inFile = AbrirArchivo(sinrep);
 
     // Se buscan los datos solicitados
     string line;
@@ -247,16 +226,9 @@ void ProcesoDatos::eliminarHotel(string & eliminar){
     eliminar += dotcomma;
     eliminar.insert (0,";");
 
-    // Objeto para lectura de archivos.
-    string sinrep = "NoDuplicado.txt";
+    // Se abre el archivo sin repeticiones
     ifstream inFile;
-    inFile.open(sinrep.c_str());
-
-    // Se comprueba que el archivo exista.
-    if (inFile.fail()){
-        cout << "\nEl archivo llamado " << sinrep << " no se abrió exitosamente"<< endl;
-        exit(0);
-    }
+    inFile = AbrirArchivo(sinrep);
 
     // Se crea el archivo para almacenar los datos requeridos
     ofstream outFile;
@@ -293,15 +265,9 @@ void ProcesoDatos::eliminarHotel(string & eliminar){
 //------------------------------------------------------------------------------------
 void ProcesoDatos::ImprimirArchivo(const string & nombre ){
 
-    // Objeto para lectura de archivos.
+    // Se abre el archivo
     ifstream inFile;
-    inFile.open(nombre.c_str());
-
-    // Se comprueba que el archivo exista.
-    if (inFile.fail()){
-        cout << "\nEl archivo llamado " << nombre << " no se abrió exitosamente"<< endl;
-        exit(0);
-    }
+    inFile = AbrirArchivo(nombre);
 
     // Se imprime el archivo.
     string line;
@@ -314,4 +280,19 @@ void ProcesoDatos::ImprimirArchivo(const string & nombre ){
     
     // Se cierra el archivo
     inFile.close();
+}
+
+//------------------------------------------------------------------------------------
+ifstream ProcesoDatos::AbrirArchivo(const string & openarch){
+
+    // Objeto para lectura de archivos.
+    ifstream inFile;
+    inFile.open(openarch.c_str());
+
+    // Se comprueba que el archivo exista.
+    if (inFile.fail()){
+        cout << "\nEl archivo llamado " << openarch << " no se abrió exitosamente"<< endl;
+        exit(0);
+    }
+    return inFile;
 }

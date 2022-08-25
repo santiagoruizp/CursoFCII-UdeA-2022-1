@@ -1,7 +1,6 @@
 
 #include<iostream>
 #include<iomanip>
-
 #include "CamasHotel.h"
 
 using namespace std;
@@ -38,6 +37,7 @@ int main(){
                 break;
             }
             case 'b':{
+                // EJECUTAR ESTA OPCIÓN SIEMPRE DESPUÉS DE EJECUTAR LA OPCIÓN 'a'
                 archivo.nuevaListaSinDuplicados();
                 break;
             }

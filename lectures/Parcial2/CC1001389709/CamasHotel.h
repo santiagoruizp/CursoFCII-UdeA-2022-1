@@ -6,7 +6,6 @@
 #include <string> 
 using namespace std;
 
-
 class ProcesoDatos{
 
     public:
@@ -20,13 +19,11 @@ class ProcesoDatos{
 
     private:
         string filename;
+        string sinrep;
         int filelines = 0;
         vector<string> FILE = {};
         void ImprimirArchivo(const string &);
-
+        ifstream AbrirArchivo(const string &);
 };
-
-
-
 
 #endif
