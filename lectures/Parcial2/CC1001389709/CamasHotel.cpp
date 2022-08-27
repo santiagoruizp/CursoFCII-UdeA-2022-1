@@ -216,7 +216,6 @@ void ProcesoDatos::contar(string & fecha){
 //------------------------------------------------------------------------------------
 void ProcesoDatos::eliminarHotel(string & eliminar){
 
-
      // Se crea el nombre del archivo a almacenar los datos
     string solicitado = "Eliminado.txt";
     solicitado.insert (0, eliminar);
@@ -263,7 +262,7 @@ void ProcesoDatos::eliminarHotel(string & eliminar){
 }
 
 //------------------------------------------------------------------------------------
-void ProcesoDatos::ImprimirArchivo(const string & nombre ){
+void ProcesoDatos::ImprimirArchivo(const string & nombre ) const{
 
     // Se abre el archivo
     ifstream inFile;
@@ -283,7 +282,7 @@ void ProcesoDatos::ImprimirArchivo(const string & nombre ){
 }
 
 //------------------------------------------------------------------------------------
-ifstream ProcesoDatos::AbrirArchivo(const string & openarch){
+ifstream ProcesoDatos::AbrirArchivo(const string & openarch) const{
 
     // Objeto para lectura de archivos.
     ifstream inFile;

@@ -22,8 +22,8 @@ class ProcesoDatos{
         string sinrep;
         int filelines = 0;
         vector<string> FILE = {};
-        void ImprimirArchivo(const string &);
-        ifstream AbrirArchivo(const string &);
+        void ImprimirArchivo(const string &) const;
+        ifstream AbrirArchivo(const string &) const;
 };
 
 #endif
