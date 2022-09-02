@@ -7,9 +7,9 @@ using namespace std;
 
 int main()
 {
-  char *s1 = "Felices Fiestas";
-  char *s2 = "Felices Fiestas";
-  char *s3 = "Felices Dias de fiesta";
+   char *s1 = "Felices Fiestas";
+   char *s2 = "Felices Fiestas";
+   char *s3 = "Felices Dias de fiesta";
 
   cout << "s1 = " << s1 << "\ns2 = " << s2 << "\ns3 = " << s3
        << "\n\nstrcmp(s1, s2) = " << setw( 2 ) << strcmp( s1, s2 )
